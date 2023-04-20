@@ -17,7 +17,13 @@ internal partial class Program
         while (true)
         {
 #pragma warning disable CS8602 // Dereference of a possibly null reference.
+            Console.WriteLine("Write \"exit\" to leave the battle");
+            Console.Write("name: ");
             name = Console.ReadLine().ToString();
+            if (name == "exit")
+            {
+                break;
+            }
             UpdateCharacter(characters.Charmender, name);
 #pragma warning restore CS8602 // Dereference of a possibly null reference.
             for (var i = 0; i <= 5; i++)
@@ -26,7 +32,5 @@ internal partial class Program
             }
             Console.WriteLine(characters.Charmender.ToString());
         }
-        var e = Console.ReadLine();
-        Console.WriteLine("Hello, World!" + e);
     }
 }
