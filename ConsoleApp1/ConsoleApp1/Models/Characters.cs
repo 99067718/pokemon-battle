@@ -26,6 +26,6 @@ namespace ConsoleApp1.Models
     class Characters
     {
         public Character Charmender = new Character(name: "Charmender", chosenName: "Charmender", strenght: "Fire", weakness: "Water", battleCry: "Charmender");
-        // public Character Pikachu = new Character("Pikachu", "Pikachu", "Fire", "Water", "Pika Pika");
+        public Character Pikachu = new Character("Pikachu", "Pikachu", "Fire", "Water", "Pika Pika");
     }
 }
