@@ -1,5 +1,4 @@
-﻿
-using ConsoleApp1.Models;
+﻿using ConsoleApp1.Models;
 
 internal partial class Program
 {
