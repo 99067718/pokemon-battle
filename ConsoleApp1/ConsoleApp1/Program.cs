@@ -1,15 +1,16 @@
 ﻿using ConsoleApp1.Models;
+using System;
 
 internal partial class Program
 {
-    private static void UpdateCharacter(Character character, string name)
-    {
-        character.ChosenName = name;
-        character.BattleCry = name;
-    }
+    // Create pokeball and add pokemon \\
+    
     private static void Main(string[] args)
     {
         Characters characters = new Characters();
+        Inventory.CreatePokeball(characters.Pikachu);
+        Inventory.CreatePokeball(characters.Charmender);
+        Inventory.ShowInventory();
         Console.WriteLine(characters.Charmender.ToString());
         Console.WriteLine(characters.Pikachu.ToString());
         var name = "unknown";
@@ -19,11 +20,12 @@ internal partial class Program
             Console.WriteLine("Write \"exit\" to leave the battle");
             Console.Write("name: ");
             name = Console.ReadLine().ToString();
+
             if (name == "exit")
             {
                 break;
             }
-            UpdateCharacter(characters.Charmender, name);
+            Character.UpdateCharacter(characters.Charmender, name);
 #pragma warning restore CS8602 // Dereference of a possibly null reference.
             for (var i = 0; i <= 5; i++)
             {

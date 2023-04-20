@@ -1,7 +1,7 @@
 ﻿
 namespace ConsoleApp1.Models
 {
-    class Character
+    public class Character
     {
         public string DefaultName { get; set; }
         public string ChosenName { get; set; }
@@ -21,6 +21,11 @@ namespace ConsoleApp1.Models
         public override string ToString()
         {
             return $"DefaultName: {DefaultName}, ChosenName: {ChosenName}, Strength: {Strenght}, Weakness: {Weakness}, BattleCry: {BattleCry}";
+        }
+        public static void UpdateCharacter(Character character, string name)
+        {
+            character.ChosenName = name;
+            character.BattleCry = name;
         }
     }
     class Characters
