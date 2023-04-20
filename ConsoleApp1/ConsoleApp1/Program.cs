@@ -7,13 +7,15 @@ internal partial class Program
     
     private static void Main(string[] args)
     {
+        Inventory.CreatePokeball(Character.CreateCharacter());
+        Inventory.ShowInventory();
         Characters characters = new Characters();
         Inventory.CreatePokeball(characters.Pikachu);
         Inventory.CreatePokeball(characters.Charmender);
-        Inventory.ShowInventory();
         Console.WriteLine(characters.Charmender.ToString());
         Console.WriteLine(characters.Pikachu.ToString());
         var name = "unknown";
+
         while (true)
         {
 #pragma warning disable CS8602 // Dereference of a possibly null reference.
