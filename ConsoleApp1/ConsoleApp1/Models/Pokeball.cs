@@ -1,4 +1,6 @@
-﻿using ConsoleApp1.Models;
+﻿using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
+
 namespace ConsoleApp1.Models
 {
     public class Pokeball
@@ -49,11 +51,19 @@ namespace ConsoleApp1.Models
                 }
             }
         }
+        public static void AddToInventory(Pokeball ball, int amountOfCopies = 1)
+        {
+                var pokemon = ball.PokemonInside;
+                Charmander newpokemon = new Charmander("Henk", "water");
+                Charmander newpokemon = new Charmander("Piet", "stone");
+                inventory.Add(ball);
+        }
         public static void CreatePokeball(Character? character = null)
         {
             if (character != null)
             {
                 Pokeball pokeball = new(character);
+                character.IsInPokeball = true;
                 inventory.Add(pokeball);
             }
             else
@@ -63,5 +73,4 @@ namespace ConsoleApp1.Models
             }
         }
     }
-
 }

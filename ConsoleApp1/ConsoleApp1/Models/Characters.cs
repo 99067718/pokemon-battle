@@ -8,6 +8,7 @@ namespace ConsoleApp1.Models
         public string Strenght { get; set; }
         public string Weakness { get; set; }
         public string BattleCry { get; set; }
+        public bool IsInPokeball { get; set; }
 
         public Character(string name, string chosenName, string strenght, string weakness, string battleCry)
         {
@@ -16,6 +17,7 @@ namespace ConsoleApp1.Models
             Strenght = strenght;
             Weakness = weakness;
             BattleCry = battleCry;
+            IsInPokeball = false;
         }
         public static Character CreateCharacter()
         {
