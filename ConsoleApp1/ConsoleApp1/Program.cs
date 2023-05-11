@@ -7,13 +7,16 @@ internal partial class Program
     
     private static void Main(string[] args)
     {
-        Inventory.CreatePokeball(Character.CreateCharacter());
+        Charmender person = new Charmender();
+        person.SetType("fire");
+        //Inventory.CreatePokeball(Character.CreateCharacter());
         Inventory.ShowInventory();
-        Characters characters = new Characters();
+        /*Characters characters = new Characters();
         Inventory.CreatePokeball(characters.Pikachu);
         Inventory.CreatePokeball(characters.Charmender);
         Console.WriteLine(characters.Charmender.ToString());
         Console.WriteLine(characters.Pikachu.ToString());
+        */
         var name = "unknown";
 
         while (true)
@@ -27,13 +30,13 @@ internal partial class Program
             {
                 break;
             }
-            Character.UpdateCharacter(characters.Charmender, name);
+            //Character.UpdateCharacter(characters.Charmender, name);
 #pragma warning restore CS8602 // Dereference of a possibly null reference.
             for (var i = 0; i <= 5; i++)
             {
-                Console.WriteLine(characters.Charmender.BattleCry);
+                //Console.WriteLine(characters.Charmender.BattleCry);
             }
-            Console.WriteLine(characters.Charmender.ToString());
+            //Console.WriteLine(characters.Charmender.ToString());
         }
     }
 }
