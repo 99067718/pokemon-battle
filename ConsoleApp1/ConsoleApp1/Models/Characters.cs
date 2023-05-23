@@ -5,7 +5,7 @@ namespace ConsoleApp1.Models
 {
     public class Pokemon
     {
-        private String? PokemonName;
+        public String? PokemonName;
         private String? NickName;
         private String? Type;
         private String[]? Strenght;
@@ -132,28 +132,35 @@ namespace ConsoleApp1.Models
             }
             return yourPokemon;
         }*/
-        public override string ToString()
-        {
-            return $"DefaultName: {PokemonName} \nChosenName: {NickName} \nStrength: {Strenght} \nWeakness: {Weakness} \nBattleCry: {BattleCry}\n";
-        }
         public static void UpdateCharacter(Pokemon character, string name)
         {
             character.NickName = name;
             character.BattleCry = name;
         }
+        public string ConvertToString()
+        {
+            return $"Name: {this.GetName()} \n Type: {this.GetType()}";
+        }
     }
     public class Charmender : Pokemon
     {
         private int BodyHeat;
-        public Charmender()
+        public Charmender(bool RequiresNameInput = true, string? DefaultName = "Charmender")
         {
+            this.PokemonName = "Charmender";
+            if (RequiresNameInput)
+            {
             this.ChangeName();
+            }
+            else
+            {
+                this.ChangeName(false, DefaultName);
+            }
             this.SetType("fire");
+            this.DefaultName = DefaultName;
         }
-        public override string ToString()
-        {
-            return $"Name: {this.GetName()} \nType: ";
-        }
+
+        public string? DefaultName { get; }
     }
 
     

@@ -6,12 +6,14 @@ namespace ConsoleApp1.Models
         private static List<Pokeball> inventory = new();
         public void ShowInventory()
         {
+            var i = 0;
             foreach (Pokeball ball in inventory)
             {
+                i ++;
                 if (ball.ContainsPokemon)
                 {
                     #pragma warning disable CS8602 // Dereference of a possibly null reference.
-                    Console.WriteLine($"Item: {ball.PokemonInside.GetName()}");
+                    Console.WriteLine($"({i}) Item: Pokeball {{ \n {ball.PokemonInside.ConvertToString()} \n }}");
                     #pragma warning restore CS8602 // Dereference of a possibly null reference.
                 }
                 else
