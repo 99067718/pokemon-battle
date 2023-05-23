@@ -39,7 +39,22 @@ internal partial class Program
             name = "MissingNo";
         }
         Trainer trainer2 = new("woman", name, trainer2Inv);
-
+        Console.Write("Do you want to name the pokemon? (y/n): ");
+        answer = Console.ReadLine();
+        if (answer.ToLower() is "y" or "yes")
+        {
+            for (var i = 0; i < 6; i++)
+            {
+                trainer.inventory.AddToInventory(trainer2.inventory.CreatePokeball(new Charmender()));
+            }
+        }
+        else
+        {
+            for (var i = 0; i < 6; i++)
+            {
+                trainer.inventory.AddToInventory(trainer2.inventory.CreatePokeball(new Charmender(false)));
+            }
+        }
         while (true)
         {
 #pragma warning disable CS8602 // Dereference of a possibly null reference.
