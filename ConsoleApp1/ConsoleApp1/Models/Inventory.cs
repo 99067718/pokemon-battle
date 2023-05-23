@@ -4,7 +4,7 @@ namespace ConsoleApp1.Models
     public class Inventory
     {
         private static List<Pokeball> inventory = new();
-        public static void ShowInventory()
+        public void ShowInventory()
         {
             foreach (Pokeball ball in inventory)
             {
@@ -20,26 +20,22 @@ namespace ConsoleApp1.Models
                 }
             }
         }
-        public static void AddToInventory(List<Pokeball> balls)
+        public void AddToInventory(Pokeball pokeball)
         {
-            for (int i = 0; i < balls.Count; i++)
-            {
-                var ball = balls[i];
-                inventory.Add(ball);
-            }
+            inventory.Add(pokeball);
         }
-        public static void CreatePokeball(Pokemon? character = null)
+        public Pokeball CreatePokeball(Pokemon? character = null)
         {
             if (character != null)
             {
                 Pokeball pokeball = new(character);
                 character.IsInPokeball = true;
-                inventory.Add(pokeball);
+                return pokeball;
             }
             else
             {
                 Pokeball pokeball = new();
-                inventory.Add(pokeball);
+                return pokeball;
             }
         }
     }

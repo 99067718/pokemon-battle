@@ -8,8 +8,8 @@ namespace ConsoleApp1.Models
         private String? PokemonName;
         private String? NickName;
         private String? Type;
-        private String? Strenght;
-        private String? Weakness;
+        private String[]? Strenght;
+        private String[]? Weakness;
         private String? BattleCry;
         public bool IsInPokeball;
 
@@ -17,7 +17,7 @@ namespace ConsoleApp1.Models
         {
             if (RequiresInput)
             {
-                Console.Write("Enter Name Here");
+                Console.Write("Enter a name here: ");
                 NickName = Console.ReadLine();
                 if (NickName != null)
                 {
@@ -25,8 +25,7 @@ namespace ConsoleApp1.Models
                 }
                 else
                 {
-                    Console.WriteLine("Entered name has been detected as a null value.");
-                    Console.WriteLine("Name has not been changed.");
+                    this.NickName = "MissingNo";
                 }
             }
             else
@@ -37,8 +36,7 @@ namespace ConsoleApp1.Models
                 }
                 else
                 {
-                    Console.WriteLine("Entered name has been detected as a null value.");
-                    Console.WriteLine("Name has not been changed.");
+                    this.NickName = "MissingNo";
                 }
             }
         }
@@ -81,11 +79,11 @@ namespace ConsoleApp1.Models
         {
             string[] types = { "normal", "fire", "water", "electric", "grass", "ice", "fighting", "poison", "ground", "flying", "psychic", "bug", "rock", "ghost", "dragon", "dark", "steel", "fairy" };
             // 18 types
-            int[] strengthmap1 = { };
-            int[] strengthmap2 = { };
-            int[] strengthmap3 = { };
-            int[] strengthmap4 = { };
-            int[] strengthmap5 = { };
+            int[] strengthmap1 = {1,1,1,1,1,1,1,1,1,1,1,1,0,0,1,1,0,1};
+            int[] strengthmap2 = {1,0,0,1,2,2,1,1,1,1,1,2,0,1,0,1,2,1};
+            int[] strengthmap3 = {1,2,0,1,0,1,1,1,2,1,1,1,2,1,0,1,1,1};
+            int[] strengthmap4 = {1,1,2,0,0,1,1,1,0,2,1,1,1,1,0,1,1,1};
+            int[] strengthmap5 = {1,0,2,1,0,1,1,0,2,0,1,0,2,1,0,1,0,1};
             int[] strengthmap6 = { };
             int[] strengthmap7 = { };
             int[] strengthmap8 = { };
@@ -99,8 +97,10 @@ namespace ConsoleApp1.Models
             int[] strengthmap16 = { };
             int[] strengthmap17 = { };
             int[] strengthmap18 = { };
+
+            Array[] lists = { strengthmap1, strengthmap2, strengthmap3, strengthmap4, strengthmap5, strengthmap6, strengthmap7, strengthmap8, strengthmap9, strengthmap10, strengthmap11, strengthmap12, strengthmap13, strengthmap14, strengthmap15, strengthmap16, strengthmap17, strengthmap18 };
             if (types.Contains(type)){
-                Console.WriteLine(Array.IndexOf(types, type));
+                var index = Array.IndexOf(types, type);
                 this.Type = type;
             }
             else
@@ -144,10 +144,11 @@ namespace ConsoleApp1.Models
     }
     public class Charmender : Pokemon
     {
-        private string BodyHeat;
+        private int BodyHeat;
         public Charmender()
         {
             this.ChangeName();
+            this.SetType("fire");
         }
         public override string ToString()
         {

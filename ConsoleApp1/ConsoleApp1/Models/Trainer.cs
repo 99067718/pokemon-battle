@@ -1,12 +1,12 @@
 ﻿namespace ConsoleApp1.Models
 {
-    public class Trainers
+    public class Trainer
     {
         public string Gender { get; set; }
         public string Name { get; set; }
-        public Inventory Inventory { get; set; }
+        public Inventory inventory { get; set; }
 
-        public Trainers(string gender, string name, Inventory inv) { 
+        public Trainer(string gender, string name, Inventory inv) { 
             if(gender.Replace(" ", "") != "" || gender != null)
             {
                 Gender = gender;
@@ -25,7 +25,7 @@
                 Name = "Pieter";
             }
             
-            Inventory = inv;
+            inventory = inv;
         }
     }
 }
