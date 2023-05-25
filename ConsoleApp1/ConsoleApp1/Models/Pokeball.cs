@@ -1,5 +1,6 @@
 ﻿using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using System.ComponentModel;
 
 namespace ConsoleApp1.Models
 {
@@ -7,9 +8,11 @@ namespace ConsoleApp1.Models
     {
         public Pokemon? PokemonInside { get; set; }
         public bool ContainsPokemon { get; set; }
+        public bool PokemonReleased { get; set; }
 
         public Pokeball(Pokemon? character = null)
         {
+            this.PokemonReleased = false;
             if (character == null)
             {
                 ContainsPokemon = false;
@@ -18,6 +21,37 @@ namespace ConsoleApp1.Models
             {
                 PokemonInside = character;
                 ContainsPokemon = true;
+            }
+        }
+
+        public bool Use(Trainer trainer)
+        {
+            
+            if (ContainsPokemon && PokemonInside != null)
+            {
+                if (trainer.IsUsingPokemon)
+                {
+                    if (trainer.ReleasedPokemon != this.PokemonInside)
+                    {
+                        Console.WriteLine("This trainer already has a pokemon in the game.");
+                        return false;
+                    }
+                }
+
+                if (PokemonReleased)
+                {
+                    PokemonReleased = false;
+                    trainer.ReleasedPokemon = this.PokemonInside;
+                }
+                else
+                {
+                    PokemonReleased = true;
+                }
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
         public override string ToString()

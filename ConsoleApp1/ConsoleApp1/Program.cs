@@ -17,6 +17,7 @@ internal partial class Program
         Trainer trainer = new Trainer("man", name, trainer1Inv);
         Console.Write("Do you want to name the pokemon? (y/n): ");
         var answer = Console.ReadLine();
+        // Add pokeballs to trainer 1's inventory \\
         if (answer.ToLower() is "y" or "yes")
         {
             for (var i = 0; i < 6; i++)
@@ -41,6 +42,7 @@ internal partial class Program
         Trainer trainer2 = new("woman", name, trainer2Inv);
         Console.Write("Do you want to name the pokemon? (y/n): ");
         answer = Console.ReadLine();
+        // Add pokeballs to trainer 2's inventory \\
         if (answer.ToLower() is "y" or "yes")
         {
             for (var i = 0; i < 6; i++)
@@ -57,20 +59,14 @@ internal partial class Program
         }
         while (true)
         {
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
             Console.WriteLine("Write \"exit\" to leave the battle");
-            Console.Write("action: ");
-            var action = Console.ReadLine().ToString();
+            Console.Write("Do you want to CONTINUE or EXIT: ");
+            var action = Console.ReadLine();
 
             if (action == "exit")
             {
                 break;
             }
-
-            // Character.UpdateCharacter(characters.Charmender, name);
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
-
-            //Console.WriteLine(characters.Charmender.ToString());
         }
     }
 }

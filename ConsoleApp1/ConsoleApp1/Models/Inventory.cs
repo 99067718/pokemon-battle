@@ -4,6 +4,10 @@ namespace ConsoleApp1.Models
     public class Inventory
     {
         private static List<Pokeball> inventory = new();
+        public Pokeball GetItem(int id)
+        {
+            return inventory[id];
+        }
         public void ShowInventory()
         {
             var i = 0;
