@@ -4,9 +4,30 @@ namespace ConsoleApp1.Models
     public class Inventory
     {
         private static List<Pokeball> inventory = new();
+        public Trainer? Owner;
         public Pokeball GetItem(int id)
         {
             return inventory[id];
+        }
+        public bool UseItem(int id)
+        {
+            bool success = false;
+            Pokeball? item = null;
+            try
+            {
+                item = inventory[id];
+            }
+            catch
+            {
+                success = false;
+                return success;
+            }
+            if (this.Owner == null)
+            {
+                return success;
+            }
+            success = item.Use(this.Owner);
+            return success;
         }
         public void ShowInventory()
         {

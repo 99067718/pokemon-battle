@@ -59,10 +59,20 @@ internal partial class Program
         }
         while (true)
         {
+            for (var i = 0; i < 6; i++)
+            {
+                trainer.inventory.UseItem(i);
+                trainer.inventory.UseItem(i);
+                trainer2.inventory.UseItem(i);
+                var success = trainer2.inventory.UseItem(i);
+                if (!success)
+                {
+                    Console.WriteLine("something went wrong");
+                }
+            }
             Console.WriteLine("Write \"exit\" to leave the battle");
             Console.Write("Do you want to CONTINUE or EXIT: ");
             var action = Console.ReadLine();
-
             if (action == "exit")
             {
                 break;

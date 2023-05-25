@@ -6,7 +6,7 @@
         public string Name;
         public Inventory inventory;
         public bool IsPlayer;
-        public Pokemon ReleasedPokemon;
+        public Pokemon? ReleasedPokemon;
         public bool IsUsingPokemon;
 
         public string TrainerAction()
@@ -60,6 +60,7 @@
             }
             
             inventory = inv;
+            this.inventory.Owner = this;
         }
     }
 }

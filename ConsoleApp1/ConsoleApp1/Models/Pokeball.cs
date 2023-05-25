@@ -41,11 +41,17 @@ namespace ConsoleApp1.Models
                 if (PokemonReleased)
                 {
                     PokemonReleased = false;
-                    trainer.ReleasedPokemon = this.PokemonInside;
+                    trainer.ReleasedPokemon = null;
+                    trainer.IsUsingPokemon = false;
+                    Console.WriteLine($"\n{trainer.Name} retreated {this.PokemonInside.GetName()}");
                 }
                 else
                 {
                     PokemonReleased = true;
+                    trainer.ReleasedPokemon = this.PokemonInside;
+                    trainer.IsUsingPokemon = true;
+                    Console.WriteLine($"\n{trainer.Name} summoned {this.PokemonInside.GetName()}");
+                    this.PokemonInside.DoBattleCry();
                 }
                 return true;
             }

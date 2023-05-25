@@ -10,7 +10,7 @@ namespace ConsoleApp1.Models
         private String? Type;
         private String[]? Strenght;
         private String[]? Weakness;
-        private String? BattleCry;
+        public String? BattleCry;
         public bool IsInPokeball;
 
         public void ChangeName(bool RequiresInput = true, string? NickName = null)
@@ -108,6 +108,10 @@ namespace ConsoleApp1.Models
                 Console.WriteLine("The entered value is not a valid Type");
             }
         }
+        public void DoBattleCry()
+        {
+            Console.WriteLine(BattleCry);
+        }
 
         //public Character(string name, string chosenName, string strenght, string weakness, string battleCry)
         //{
@@ -147,6 +151,7 @@ namespace ConsoleApp1.Models
         private int BodyHeat;
         public Charmender(bool RequiresNameInput = true, string? DefaultName = "Charmender")
         {
+            this.BattleCry = "* Charmender Sounds *";
             this.PokemonName = "Charmender";
             if (RequiresNameInput)
             {
