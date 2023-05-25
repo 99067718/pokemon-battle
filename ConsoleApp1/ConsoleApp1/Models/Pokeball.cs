@@ -29,25 +29,24 @@ namespace ConsoleApp1.Models
             
             if (ContainsPokemon && PokemonInside != null)
             {
-                if (trainer.IsUsingPokemon)
+                if (trainer.IsUsingPokemon && trainer.ReleasedPokemon != null)
                 {
                     if (trainer.ReleasedPokemon != this.PokemonInside)
                     {
-                        Console.WriteLine("This trainer already has a pokemon in the game.");
                         return false;
                     }
                 }
 
                 if (PokemonReleased)
                 {
-                    PokemonReleased = false;
+                    this.PokemonReleased = false;
                     trainer.ReleasedPokemon = null;
                     trainer.IsUsingPokemon = false;
                     Console.WriteLine($"\n{trainer.Name} retreated {this.PokemonInside.GetName()}");
                 }
                 else
                 {
-                    PokemonReleased = true;
+                    this.PokemonReleased = true;
                     trainer.ReleasedPokemon = this.PokemonInside;
                     trainer.IsUsingPokemon = true;
                     Console.WriteLine($"\n{trainer.Name} summoned {this.PokemonInside.GetName()}");

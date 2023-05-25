@@ -60,7 +60,6 @@
             }
             
             inventory = inv;
-            this.inventory.Owner = this;
         }
     }
 }

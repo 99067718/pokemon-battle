@@ -6,8 +6,8 @@ internal partial class Program
     
     private static void Main(string[] args)
     {
-        Inventory trainer1Inv = new Inventory();
-        Inventory trainer2Inv = new Inventory();
+        Inventory trainer1Inv = new();
+        Inventory trainer2Inv = new();
         Console.Write("Enter a name for the first trainer: ");
         var name = Console.ReadLine();
         if (name == null || name == "")
@@ -15,8 +15,10 @@ internal partial class Program
             name = "MissingNo";
         }
         Trainer trainer = new Trainer("man", name, trainer1Inv);
+        trainer1Inv.Owner = trainer;
         Console.Write("Do you want to name the pokemon? (y/n): ");
         var answer = Console.ReadLine();
+
         // Add pokeballs to trainer 1's inventory \\
         if (answer.ToLower() is "y" or "yes")
         {
@@ -40,6 +42,7 @@ internal partial class Program
             name = "MissingNo";
         }
         Trainer trainer2 = new("woman", name, trainer2Inv);
+        trainer2Inv.Owner = trainer2;
         Console.Write("Do you want to name the pokemon? (y/n): ");
         answer = Console.ReadLine();
         // Add pokeballs to trainer 2's inventory \\
@@ -47,14 +50,14 @@ internal partial class Program
         {
             for (var i = 0; i < 6; i++)
             {
-                trainer.inventory.AddToInventory(trainer2.inventory.CreatePokeball(new Charmender()));
+                trainer2.inventory.AddToInventory(trainer2.inventory.CreatePokeball(new Charmender()));
             }
         }
         else
         {
             for (var i = 0; i < 6; i++)
             {
-                trainer.inventory.AddToInventory(trainer2.inventory.CreatePokeball(new Charmender(false)));
+                trainer2.inventory.AddToInventory(trainer2.inventory.CreatePokeball(new Charmender(false)));
             }
         }
         while (true)
@@ -62,13 +65,9 @@ internal partial class Program
             for (var i = 0; i < 6; i++)
             {
                 trainer.inventory.UseItem(i);
+                trainer2.inventory.UseItem(i);
                 trainer.inventory.UseItem(i);
                 trainer2.inventory.UseItem(i);
-                var success = trainer2.inventory.UseItem(i);
-                if (!success)
-                {
-                    Console.WriteLine("something went wrong");
-                }
             }
             Console.WriteLine("Write \"exit\" to leave the battle");
             Console.Write("Do you want to CONTINUE or EXIT: ");

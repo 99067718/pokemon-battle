@@ -3,7 +3,7 @@ namespace ConsoleApp1.Models
 {
     public class Inventory
     {
-        private static List<Pokeball> inventory = new();
+        private List<Pokeball> inventory = new();
         public Trainer? Owner;
         public Pokeball GetItem(int id)
         {
@@ -24,9 +24,14 @@ namespace ConsoleApp1.Models
             }
             if (this.Owner == null)
             {
+                success = false;
                 return success;
             }
             success = item.Use(this.Owner);
+            if (!success)
+            {
+                Console.WriteLine("sad moment, something went wrong in \"item.Use()\"");
+            }
             return success;
         }
         public void ShowInventory()
@@ -38,7 +43,7 @@ namespace ConsoleApp1.Models
                 if (ball.ContainsPokemon)
                 {
                     #pragma warning disable CS8602 // Dereference of a possibly null reference.
-                    Console.WriteLine($"({i}) Item: Pokeball {{ \n {ball.PokemonInside.ConvertToString()} \n }}");
+                    Console.WriteLine($"({i}) Item: Pokeball {{ \n {ball.PokemonInside.ConvertToString()}\nIn-game: {!ball.PokemonInside.IsInPokeball} \n }}");
                     #pragma warning restore CS8602 // Dereference of a possibly null reference.
                 }
                 else
