@@ -144,7 +144,7 @@ namespace ConsoleApp1.Models
             Console.WriteLine("* Makes Charmender sounds *");
         }
     }
-    public class Squirtle  : Pokemon
+    public class Squirtle : Pokemon
     {
         public Squirtle(bool RequiresNameInput = true, string? DefaultName = "Squirtle") : base(RequiresNameInput)
         {
