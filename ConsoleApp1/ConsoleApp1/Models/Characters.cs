@@ -3,16 +3,29 @@ using System.Net.Http.Json;
 
 namespace ConsoleApp1.Models
 {
-    public class Pokemon
+    public abstract class Pokemon
     {
+        public string? DefaultName;
         public String? PokemonName;
         private String? NickName;
         private String? Type;
         private String[]? Strenght;
         private String[]? Weakness;
-        public String? BattleCry;
         public bool IsInPokeball;
 
+        public Pokemon(bool RequiresNameInput = true, string? DefaultName = "MissingNo")
+        {
+            this.PokemonName = "Bulbasaur";
+            if (RequiresNameInput)
+            {
+                this.ChangeName();
+            }
+            else
+            {
+                this.ChangeName(false, DefaultName);
+            }
+            this.SetType("fire");
+        }
         public void ChangeName(bool RequiresInput = true, string? NickName = null)
         {
             if (RequiresInput)
@@ -108,38 +121,11 @@ namespace ConsoleApp1.Models
                 Console.WriteLine("The entered value is not a valid Type");
             }
         }
-        public void DoBattleCry()
-        {
-            Console.WriteLine(BattleCry);
-        }
+        public abstract void DoBattleCry();
 
-        //public Character(string name, string chosenName, string strenght, string weakness, string battleCry)
-        //{
-        //    DefaultName = name;
-        //    ChosenName = chosenName;
-        //    Strenght = strenght;
-        //    Weakness = weakness;
-        //    BattleCry = battleCry;
-        //    IsInPokeball = false;
-        //}
-        /*public static Character CreateCharacter()
-        {
-            Console.Write("Name your pokemon: ");
-            #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
-            string name = Console.ReadLine();
-            #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
-            Character yourPokemon = new Character("Pikachu", "Pikachu", "Fire", "Water", "Pika Pika");
-            if (name != null)
-            {
-                yourPokemon.ChosenName = name;
-                yourPokemon.BattleCry = name;
-            }
-            return yourPokemon;
-        }*/
         public static void UpdateCharacter(Pokemon character, string name)
         {
             character.NickName = name;
-            character.BattleCry = name;
         }
         public string ConvertToString()
         {
@@ -149,29 +135,42 @@ namespace ConsoleApp1.Models
     public class Charmender : Pokemon
     {
         private int BodyHeat;
-        public Charmender(bool RequiresNameInput = true, string? DefaultName = "Charmender")
+        public Charmender(bool RequiresNameInput = true, string? DefaultName = "Charmender"): base(RequiresNameInput)
         {
-            this.BattleCry = "* Charmender Sounds *";
-            this.PokemonName = "Charmender";
-            if (RequiresNameInput)
-            {
-            this.ChangeName();
-            }
-            else
-            {
-                this.ChangeName(false, DefaultName);
-            }
-            this.SetType("fire");
             this.DefaultName = DefaultName;
         }
-
-        public string? DefaultName { get; }
+        public override void DoBattleCry()
+        {
+            Console.WriteLine("* Makes Charmender sounds *");
+        }
+    }
+    public class Squirtle  : Pokemon
+    {
+        public Squirtle(bool RequiresNameInput = true, string? DefaultName = "Squirtle") : base(RequiresNameInput)
+        {
+            this.DefaultName = DefaultName;
+        }
+        public override void DoBattleCry()
+        {
+            Console.WriteLine("* Makes Squirtle sounds *");
+        }
+    }
+    public class Bulbasaur : Pokemon
+    {
+        public Bulbasaur(bool RequiresNameInput = true, string? DefaultName = "Bulbasaur"): base(RequiresNameInput)
+        {
+            this.DefaultName = DefaultName;
+        }
+        public override void DoBattleCry()
+        {
+            Console.WriteLine("* Makes Bulbasaur sounds *");
+        }
     }
 
-    
-   /* class Characters
-    {
-        public Character Charmender = new Character(name: "Charmender", chosenName: "Charmender", strenght: "Fire", weakness: "Water", battleCry: "Charmender");
-        public Character Pikachu = new Character("Pikachu", "Pikachu", "Fire", "Water", "Pika Pika");
-    }*/
+
+    /* class Characters
+     {
+         public Character Charmender = new Character(name: "Charmender", chosenName: "Charmender", strenght: "Fire", weakness: "Water", battleCry: "Charmender");
+         public Character Pikachu = new Character("Pikachu", "Pikachu", "Fire", "Water", "Pika Pika");
+     }*/
 }

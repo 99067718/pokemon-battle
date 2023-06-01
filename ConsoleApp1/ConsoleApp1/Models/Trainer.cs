@@ -21,7 +21,6 @@
             }
             return "";
         }
-
         private string PlayerInput()
         {
             return "";
