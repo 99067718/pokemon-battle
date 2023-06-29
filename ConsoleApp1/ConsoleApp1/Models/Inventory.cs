@@ -27,7 +27,14 @@ namespace ConsoleApp1.Models
                 success = false;
                 return success;
             }
-            success = item.Use(this.Owner);
+            if (this.Owner != null)
+            {
+                var pokemon = item.Use(Owner);
+                if (pokemon != null)
+                {
+                    success = true;
+                }
+            }
             if (!success)
             {
                 Console.WriteLine("sad moment, something went wrong in \"item.Use()\"");

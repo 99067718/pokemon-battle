@@ -6,6 +6,12 @@ internal partial class Program
     
     private static void Main(string[] args)
     {
+        Tools.ErrorMessage("oh no, error");
+        Tools.WarningMessage("you haven't selected a type yet, this can cause errors!");
+        Tools.HintMessage("when you have low hp, you can always heal!");
+        Tools.SuccessMessage("Game loaded successfully!");
+        Tools.RainbowMessage("whoa it's a randomized rainbow!");
+
         Inventory trainer1Inv = new();
         Inventory trainer2Inv = new();
         Console.Write("Enter a name for the first trainer: ");
@@ -17,7 +23,7 @@ internal partial class Program
         Trainer trainer = new Trainer("man", name, trainer1Inv);
         trainer1Inv.Owner = trainer;
         Console.Write("Do you want to name the pokemon? (y/n): ");
-        var answer = Console.ReadLine();
+        string? answer = Console.ReadLine();
 
         // Add pokeballs to trainer 1's inventory \\
         if (answer.ToLower() is "y" or "yes")
@@ -60,22 +66,49 @@ internal partial class Program
                 trainer2.inventory.AddToInventory(trainer2.inventory.CreatePokeball(new Charmender(false)));
             }
         }
+        int trainer1Wins = 0;
+        int trainer2Wins = 0;
+        int ties = 0;
         while (true)
         {
-            for (var i = 0; i < 6; i++)
+            try
             {
-                trainer.inventory.UseItem(i);
-                trainer2.inventory.UseItem(i);
-                trainer.inventory.UseItem(i);
-                trainer2.inventory.UseItem(i);
+                var pokemontrainer1 = trainer.inventory.GetItem(trainer2Wins + ties);
+                var pokemontrainer2 = trainer2.inventory.GetItem(trainer1Wins + ties);
+                Trainer? winner = Battle.StartBattle(trainer, trainer2, pokemontrainer1, pokemontrainer2);
+                if (winner != null)
+                {
+                    if (winner == trainer)
+                    {
+                        trainer1Wins++;
+                    }
+                    else
+                    {
+                        trainer2Wins++;
+                    }
+                }
+                else
+                {
+                    ties++;
+                }
             }
-            Console.WriteLine("Write \"exit\" to leave the battle");
-            Console.Write("Do you want to CONTINUE or EXIT: ");
-            var action = Console.ReadLine();
-            if (action == "exit")
+            catch
             {
                 break;
             }
+        }
+        Console.WriteLine("Final Results:");
+        if (trainer1Wins > trainer2Wins)
+        {
+            Console.WriteLine($"{trainer.Name} has won from {trainer2.Name} with a score of {trainer1Wins}");
+        }
+        else if (trainer2Wins > trainer1Wins)
+        {
+            Console.WriteLine($"{trainer2.Name} has won from {trainer.Name} with a score of {trainer2Wins}");
+        }
+        else
+        {
+            Console.WriteLine($"It's a tie, you both had {trainer1Wins} wins.");
         }
     }
 }

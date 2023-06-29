@@ -24,7 +24,7 @@ namespace ConsoleApp1.Models
             }
         }
 
-        public bool Use(Trainer trainer)
+        public Pokemon? Use(Trainer trainer)
         {
             
             if (ContainsPokemon && PokemonInside != null)
@@ -33,7 +33,7 @@ namespace ConsoleApp1.Models
                 {
                     if (trainer.ReleasedPokemon != this.PokemonInside)
                     {
-                        return false;
+                        return null;
                     }
                 }
 
@@ -52,11 +52,11 @@ namespace ConsoleApp1.Models
                     Console.WriteLine($"\n{trainer.Name} summoned {this.PokemonInside.GetName()}");
                     this.PokemonInside.DoBattleCry();
                 }
-                return true;
+                return this.PokemonInside;
             }
             else
             {
-                return false;
+                return null;
             }
         }
         public override string ToString()
