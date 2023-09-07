@@ -1,0 +1,29 @@
+C:\Users\HP\Documents\Klas 2\School\Programmeren\C#\pokemon-battle\ConsoleApp1\ConsoleApp1\bin\Debug\net7.0\ConsoleApp1.exe
+C:\Users\HP\Documents\Klas 2\School\Programmeren\C#\pokemon-battle\ConsoleApp1\ConsoleApp1\bin\Debug\net7.0\ConsoleApp1.deps.json
+C:\Users\HP\Documents\Klas 2\School\Programmeren\C#\pokemon-battle\ConsoleApp1\ConsoleApp1\bin\Debug\net7.0\ConsoleApp1.runtimeconfig.json
+C:\Users\HP\Documents\Klas 2\School\Programmeren\C#\pokemon-battle\ConsoleApp1\ConsoleApp1\bin\Debug\net7.0\ConsoleApp1.dll
+C:\Users\HP\Documents\Klas 2\School\Programmeren\C#\pokemon-battle\ConsoleApp1\ConsoleApp1\bin\Debug\net7.0\ConsoleApp1.pdb
+C:\Users\HP\Documents\Klas 2\School\Programmeren\C#\pokemon-battle\ConsoleApp1\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.csproj.AssemblyReference.cache
+C:\Users\HP\Documents\Klas 2\School\Programmeren\C#\pokemon-battle\ConsoleApp1\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\Documents\Klas 2\School\Programmeren\C#\pokemon-battle\ConsoleApp1\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.AssemblyInfoInputs.cache
+C:\Users\HP\Documents\Klas 2\School\Programmeren\C#\pokemon-battle\ConsoleApp1\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.AssemblyInfo.cs
+C:\Users\HP\Documents\Klas 2\School\Programmeren\C#\pokemon-battle\ConsoleApp1\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\Klas 2\School\Programmeren\C#\pokemon-battle\ConsoleApp1\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.dll
+C:\Users\HP\Documents\Klas 2\School\Programmeren\C#\pokemon-battle\ConsoleApp1\ConsoleApp1\obj\Debug\net7.0\refint\ConsoleApp1.dll
+C:\Users\HP\Documents\Klas 2\School\Programmeren\C#\pokemon-battle\ConsoleApp1\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.pdb
+C:\Users\HP\Documents\Klas 2\School\Programmeren\C#\pokemon-battle\ConsoleApp1\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.genruntimeconfig.cache
+C:\Users\HP\Documents\Klas 2\School\Programmeren\C#\pokemon-battle\ConsoleApp1\ConsoleApp1\obj\Debug\net7.0\ref\ConsoleApp1.dll
+D:\School\Programming\pokemon-battle-main\ConsoleApp1\ConsoleApp1\bin\Debug\net7.0\ConsoleApp1.exe
+D:\School\Programming\pokemon-battle-main\ConsoleApp1\ConsoleApp1\bin\Debug\net7.0\ConsoleApp1.deps.json
+D:\School\Programming\pokemon-battle-main\ConsoleApp1\ConsoleApp1\bin\Debug\net7.0\ConsoleApp1.runtimeconfig.json
+D:\School\Programming\pokemon-battle-main\ConsoleApp1\ConsoleApp1\bin\Debug\net7.0\ConsoleApp1.dll
+D:\School\Programming\pokemon-battle-main\ConsoleApp1\ConsoleApp1\bin\Debug\net7.0\ConsoleApp1.pdb
+D:\School\Programming\pokemon-battle-main\ConsoleApp1\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.GeneratedMSBuildEditorConfig.editorconfig
+D:\School\Programming\pokemon-battle-main\ConsoleApp1\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.AssemblyInfoInputs.cache
+D:\School\Programming\pokemon-battle-main\ConsoleApp1\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.AssemblyInfo.cs
+D:\School\Programming\pokemon-battle-main\ConsoleApp1\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.csproj.CoreCompileInputs.cache
+D:\School\Programming\pokemon-battle-main\ConsoleApp1\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.dll
+D:\School\Programming\pokemon-battle-main\ConsoleApp1\ConsoleApp1\obj\Debug\net7.0\refint\ConsoleApp1.dll
+D:\School\Programming\pokemon-battle-main\ConsoleApp1\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.pdb
+D:\School\Programming\pokemon-battle-main\ConsoleApp1\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.genruntimeconfig.cache
+D:\School\Programming\pokemon-battle-main\ConsoleApp1\ConsoleApp1\obj\Debug\net7.0\ref\ConsoleApp1.dll
